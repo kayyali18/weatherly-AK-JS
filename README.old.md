@@ -1,1 +1,1 @@
-![WireFrame](src/)
+![WireFrame](src/wireframe.jpg)
