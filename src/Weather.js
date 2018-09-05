@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+import Current from './Current';
+import Hourly from './Hourly';
+import TenDay from './TenDay';
+
 
 
 class Weather extends Component {
@@ -22,6 +26,7 @@ class Weather extends Component {
       <p className='temp'> 90 Degrees(fetch from API) </p>
       <p className='daily-range'> 60 - 90 (fetch from API)</p>
       </div>
+          {/* Will have conditional rendering depending on what button will be selected */}
       )
   }
 
