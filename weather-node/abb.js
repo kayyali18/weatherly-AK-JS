@@ -1,9 +1,7 @@
 const yargs = require ('yargs');
 
-const request = require ('request')
-
 const geocode = require ('./geocode/geocode')
-const key = `a4aac8ef53f324af6467e2e607de880c`
+const weather = require ('./weather/weather')
 
 const argv = yargs
     .options({
@@ -20,15 +18,12 @@ const argv = yargs
 
 geocode.geocodeAddress(argv.address, (errorMessage, results) => {
     if (errorMessage) console.log (errorMessage);
-    console.log (JSON.stringify(results, undefined, 4));
-    request ({
-        url: `https://api.darksky.net/forecast/${key}/${results.latitude},${results.longitude}`,
-        json: true
-    }, (error, response, body) => {
-        console.log (body.currently)
-    })
+    console.log (results.address);
+    weather.getWeather(results.latitude, results.longitude, (errorMessage, weatherResults) => {
+        if (errorMessage) console.log (errorMessage);
+        console.log (`It's currently ${weatherResults.temperature}.\n\nIt feels like ${weatherResults.apparentTemperature}.`);
+    });
 })
-
 
 
 

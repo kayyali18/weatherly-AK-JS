@@ -10,7 +10,6 @@ var geocodeAddress = (address, callback) => {
         json: true, //tells it that whats coming back is JSON so it auto parses for us
 
     }, (error, response, body) => { //parameters for callback are determined in the docs for request
-
         if (error) callback(`Unable to connect to Google Servers`)
         else if (body.status == 'ZERO_RESULTS') callback('Unable to find that address')
         else if (body.status == 'OK') {
@@ -21,6 +20,7 @@ var geocodeAddress = (address, callback) => {
                 longitude: body.results[0].geometry.location.lng
             })
         }
+        console.log (body)
         // console.log (JSON.stringify(body, undefined, 2)); //second arg filters properties
         // console.log (JSON.stringify(response, undefined, 2)); //sends back status code
         // console.log (JSON.stringify(error, undefined, 2)); //status code 200 == A-ok
