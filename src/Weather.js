@@ -25,8 +25,8 @@ class Weather extends Component {
       <p className='day'> Tuesday, March 18th </p>
       <p className='temp'> 90 Degrees(fetch from API) </p>
       <p className='daily-range'> 60 - 90 (fetch from API)</p>
-      </div>
           {/* Will have conditional rendering depending on what button will be selected */}
+      </div>
       )
   }
 
