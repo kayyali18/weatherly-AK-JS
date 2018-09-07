@@ -4,8 +4,35 @@ import './App.css';
 
 import Weather from './Weather';
 import TenDay from './TenDay';
+import Input from './Input';
+import { get } from 'http';
+
+const getWeather = require ('./weather-api')
+
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      city: 'Denver',
+      state: 'CO',
+      data: {}
+    }
+  }
+
+  componentDidMount() {
+    getWeather.getWeather(this.state.city, this.state.state)
+    .then (data => {
+      this.setState({
+        data: data
+      })
+    })
+  }
+
+  resetLocation = () => {
+
+  }
+
   render() {
     return (
       <div className="App">
@@ -13,6 +40,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
+        <Input />
         <TenDay/>
         <Weather/>
       </div>

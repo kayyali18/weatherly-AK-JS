@@ -1,10 +1,12 @@
 import React, { Component} from 'react'
 
+const getWeather = require ('./weather-api.js')
+
 export default class Current extends Component{
   constructor() {
     super();
+    this.state 
   }
-
 
   render() {
     return (
