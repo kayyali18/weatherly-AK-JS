@@ -1,4 +1,7 @@
 .App {
+  background: url('https://files.slack.com/files-pri/T029P2S9M-FCPJ8CPLL/weatherly-background.jpg');
+  background-size: cover;
+  height: 100vh;
   text-align: center;
 }
 
@@ -25,4 +28,9 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.current-weather {
+  border: 2px solid red;
+  width: 150px;
 }

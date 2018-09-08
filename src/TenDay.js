@@ -10,11 +10,14 @@ export default class TenDay extends Component{
     return (
       <div className='TenDayWeather'>
         <div className='DailyWeatherCard'>
-        {/* Display current Location */}
         {/* Display Current Day */}
+        <h3> Thursday </h3>
         {/* Pull Temp for current location */}
+        <p className="curr-temp">32</p>
+        {/* Icons */}
+
         {/* Pull Hi-Lo for Current location */}
-        {/* Decide Summary, or Pull summary if given */}
+        <p className="hi-lo">Hi - Lo </p>
         </div>
 
         <div className='DailyWeatherCard'>

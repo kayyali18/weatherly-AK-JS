@@ -18,7 +18,6 @@ const getWeather = (city, state) => {
         if (error.code == 'ENOTFOUND') console.log ('Unable to connect to API servers')
         else console.log (error.message);
     })
-    console.log (data)
     return data
 /* Query is dynamic based off compnent calling it
 http://api.wunderground.com/api/1682ab773bd1bd38/forecast10day/conditions/hourly/q/CO/Denver.json
