@@ -7,7 +7,8 @@ import TenDay from './TenDay';
 import Input from './Input';
 import { get } from 'http';
 import Current from './Current';
-import Hourly from './Hourly'
+import Hourly from './Hourly';
+import Header from './Header';
 
 const getWeather = require ('./weather-api')
 
@@ -33,10 +34,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Header />
         <Input />
         <Current />
         <TenDay />
-        <Hourly />
       </div>
     );
   }
