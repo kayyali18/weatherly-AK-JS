@@ -1,6 +1,6 @@
 .App {
   display: grid;
-  grid-template-columns: 70% 1fr;
+  grid-template-columns: 1fr 1fr;
   padding: 5px;
   grid-template-rows: 1fr 1fr;
   background: url('https://files.slack.com/files-pri/T029P2S9M-FCPJ8CPLL/weatherly-background.jpg');
@@ -38,8 +38,10 @@
 }
 
 .current-weather {
-  border: 1px solid;
+  /*border: 1px solid goldenrod;*/
+  background-opacity: .2;
   height: 55vh;
+  font-size: 1.5em;
   display: flex;
   flex-direction: column;
   justify-content: flex-start; 
@@ -49,9 +51,18 @@
   color: #FFFFFF;
 }
 
+.current-location {
+  font-size: 2em;
+  margin-bottom: 0px;
+}
+
 .current-component {
-  margin: 5px 0px;
+  margin: 2px 0px;
   /*text-align: left;*/
+}
+
+.current-day {
+  margin: 0px;
 }
 
 .day-summary {

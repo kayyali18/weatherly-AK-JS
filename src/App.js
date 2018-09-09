@@ -37,6 +37,7 @@ class App extends Component {
         <Header />
         <Input />
         <Current />
+        <TenDay />
       </div>
     );
   }
