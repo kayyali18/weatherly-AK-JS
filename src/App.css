@@ -1,7 +1,12 @@
 .App {
+  display: grid;
+  grid-template-columns: 70% 1fr;
+  padding: 5px;
+  grid-template-rows: 1fr 1fr;
   background: url('https://files.slack.com/files-pri/T029P2S9M-FCPJ8CPLL/weatherly-background.jpg');
   background-size: cover;
   height: 100vh;
+  font-family: 'Jua', sans-serif;
   text-align: center;
 }
 
@@ -10,11 +15,13 @@
   height: 80px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.header {
+  grid-column: 1;
+  grid-row: 1;
+  font-size: 2em;
+  height: 13px;
+  width: 500px;
+  color: #FFFFFF;
 }
 
 .App-title {
@@ -31,6 +38,58 @@
 }
 
 .current-weather {
-  border: 2px solid red;
+  border: 1px solid;
+  height: 55vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  grid-row: 1; 
+  grid-column: 2;
+  width: 100%;
+  color: #FFFFFF;
+}
+
+.current-component {
+  margin: 5px 0px;
+  /*text-align: left;*/
+}
+
+.day-summary {
+  margin: 20px 5px;
+}
+
+.hourly-weather {
+  border: 2px solid #FFFFFF;
+  border-radius: 10px;
   width: 150px;
+  color: #FFFFFF;
+}
+
+.TenDayWeather {
+  border: 2px solid #FFFFFF;
+  border-radius: 10px;
+  width: 150px;
+  color: #FFFFFF;
+}
+
+.input-form {
+  padding: 20px;
+  padding-left: 10px;
+  margin-top: 100px;
+  grid-column: 1;
+  grid-row: 1;
+  color: #FFFFFF;
+  width: 500px;
+}
+
+.submit-btn {
+  margin: 0px 10px;
+  background: transparent;
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  border-radius: 10px;
+}
+
+.city-input {
+  margin: 0px 10px;
 }

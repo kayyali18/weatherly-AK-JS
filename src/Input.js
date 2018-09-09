@@ -9,12 +9,12 @@ class Input extends Component {
     }
     render() { 
         return ( 
-            <form>
+            <form className = 'input-form'>
                 <label> Enter your location:
                     <input className="city-input"
                         type="text"
                         value={this.state.location}
-                        placeholder="Enter location"
+                        placeholder="Enter location "
                         aria-label="Input field for location"
                         onChange={event => {
                             this.setState({
@@ -22,7 +22,9 @@ class Input extends Component {
                             })
                         }} />
                 </label>
-                <button type="submit"
+                <button 
+                    className="submit-btn"
+                    type="submit"
                     onClick={event => {
                         event.preventDefault();
                         this.props.resetLocation(this.state.location);
