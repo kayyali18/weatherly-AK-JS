@@ -6,7 +6,7 @@ const key = keyObj.key
 
 const getWeather = (city, state) => {
     let encodedAddress = encodeURIComponent(city);
-    let weatherUrl = `http://api.wunderground.com/api/1682ab773bd1bd38/forecast10day/conditions/hourly/q/${state}/${encodedAddress}.json`;
+    let weatherUrl = `http://api.wunderground.com/api/${key}/forecast10day/conditions/hourly/q/${state}/${encodedAddress}.json`;
 
     var data = axios.get (weatherUrl)
     .then ((response) => {
@@ -20,7 +20,7 @@ const getWeather = (city, state) => {
     })
     return data
 /* Query is dynamic based off compnent calling it
-http://api.wunderground.com/api/1682ab773bd1bd38/forecast10day/conditions/hourly/q/CO/Denver.json
+http://api.wunderground.com/api/${key}/forecast10day/conditions/hourly/q/CO/Denver.json
 
 */
 }   
