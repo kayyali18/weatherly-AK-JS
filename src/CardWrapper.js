@@ -1,6 +1,5 @@
 import React, { Component} from 'react'
 import EachDay from './EachDay.js';
-import Hourly from './Hourly.js';
 
 const getWeather = require ('./weather-api.js').getWeather;
 
@@ -8,9 +7,9 @@ export default class TenDay extends Component{
   constructor() {
     super();
     this.data = getWeather('Denver', 'CO');
-    this.days = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18];
+    this.days = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
     this.state = {
-      data: null,
+      data: null
     }
   }
 
@@ -24,18 +23,16 @@ export default class TenDay extends Component{
 
   render() {
     if (!this.state.data) return null;
-    else if (this.state.data) {
-      return (
-        <div className='TenDayWeather'>
-        {
-          this.days.map((day, index) => {
-          return <EachDay data={this.state.data} counter={day} index={index}/>
-          })
-        }
-  
-        </div>
-      )
-    }
+    return (
+      <div className='TenDayWeather'>
+      {
+        this.days.map((day, index) => {
+        return <EachDay data={this.state.data} counter={day} index={index}/>
+        })
+      }
+
+      </div>
+    )
   }
 }
 

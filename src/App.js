@@ -3,14 +3,14 @@ import logo from './logo.svg';
 import './App.css';
 
 import Weather from './Weather';
-import TenDay from './TenDay';
 import Input from './Input';
 import { get } from 'http';
 import Current from './Current';
 import Hourly from './Hourly';
 import Header from './Header';
+import TenDay from './CardWrapper';
 
-const getWeather = require ('./weather-api')
+const getWeather = require ('./weather-api').getWeather
 
 
 class App extends Component {
@@ -24,7 +24,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    getWeather.getWeather(this.state.city, this.state.state)
+    getWeather(this.state.city, this.state.state)
     .then (data => {
       this.setState ({
         data
@@ -41,8 +41,9 @@ class App extends Component {
       <div className="App">
         <Header />
         <Input />
-        <Current data={this.state.data}/>
+        <Current />
         <TenDay />
+        <Hourly />
       </div>
     );
   }
