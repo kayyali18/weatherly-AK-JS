@@ -1,7 +1,7 @@
 const axios = require ('axios');
 
 
-const keyObj = require ('../src/api-Key')
+const keyObj = require ('../src/api-key')
 const key = keyObj.key
 
 const getWeather = (city, state) => {

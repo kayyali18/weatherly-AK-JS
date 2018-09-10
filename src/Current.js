@@ -33,7 +33,7 @@ export default class Current extends Component{
     {/* Pull Temp for current location */}
     <p className="curr-temp current-component">Temperature: {this.state.data.current_observation.temperature_string}</p>
     {/* Pull Hi-Lo for Current location */}
-    <img src={this.state.data.current_observation.icon_url} />
+    <img className='curr-icon' src={this.state.data.current_observation.icon_url} />
     <p className="hi-lo current-component">Hi-Lo: 60-75</p>
     {/* Decide Summary, or Pull summary if given */}
     <p className="day-summary current-component">{this.state.data.forecast.txt_forecast.forecastday[0].fcttext}</p>
