@@ -3,7 +3,7 @@
   grid-template-columns: 1fr 300px;
   padding: 5px;
   grid-template-rows: 1fr 1fr;
-  background: url('https://files.slack.com/files-pri/T029P2S9M-FCPJ8CPLL/weatherly-background.jpg');
+  background: url('./imgs/1420318956659.jpg');
   background-size: cover;
   height: 100vh;
   font-family: 'Jua', sans-serif;
@@ -34,7 +34,8 @@
 
 .current-weather {
   border: 1px solid cornsilk;
-  background-opacity: .2;
+  background-color: rgba(177, 177, 177, 0.667); 
+  /* Copy above line */
   height: 400px;
   font-size: 1.5em;
   display: flex;

@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import Weather from './Weather';
-import TenDay from './TenDay';
+import CardWrapper from './CardWrapper';
 import Input from './Input';
 import { get } from 'http';
 import Current from './Current';
@@ -42,7 +42,7 @@ class App extends Component {
         <Header />
         <Input />
         <Current />
-        <TenDay />
+        <CardWrapper />
       </div>
     );
   }
