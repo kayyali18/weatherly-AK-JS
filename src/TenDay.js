@@ -1,4 +1,5 @@
 import React, { Component} from 'react'
+import EachDay from './EachDay.js';
 
 const getWeather = require ('./weather-api.js').getWeather;
 
@@ -6,6 +7,7 @@ export default class TenDay extends Component{
   constructor() {
     super();
     this.data = getWeather('Denver', 'CO');
+    this.days = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
     this.state = {
       data: null
     }
@@ -19,93 +21,16 @@ export default class TenDay extends Component{
     })
   }
 
-
   render() {
     if (!this.state.data) return null;
     return (
       <div className='TenDayWeather'>
-        <div className='DailyWeatherCard'>
-        {/* Display Current Day */}
-        <h3 className='current-day current-component'>{this.state.data.forecast.txt_forecast.forecastday[0].title}</h3>
-        {/* Pull Temp for current location */}
-        <p className="curr-temp">32</p>
-        {/* Icons */}
+      {
+        this.days.map((day, index) => {
+        return <EachDay data={this.state.data} counter={day} index={index}/>
+        })
+      }
 
-        {/* Pull Hi-Lo for Current location */}
-        <p className="hi-lo">Hi - Lo </p>
-        </div>
-
-        <div className='DailyWeatherCard'>
-        {/* Display current Location */}
-        {/* Display Current Day +1 */}
-        {/* Pull Temp for current location */}
-        {/* Pull Hi-Lo for Current location */}
-        {/* Decide Summary, or Pull summary if given */}
-        </div>
-
-        <div className='DailyWeatherCard'>
-        {/* Display current Location */}
-        {/* Display Current Day +2 */}
-        {/* Pull Temp for current location */}
-        {/* Pull Hi-Lo for Current location */}
-        {/* Decide Summary, or Pull summary if given */}
-        </div>
-
-        <div className='DailyWeatherCard'>
-        {/* Display current Location */}
-        {/* Display Current Day +3 */}
-        {/* Pull Temp for current location */}
-        {/* Pull Hi-Lo for Current location */}
-        {/* Decide Summary, or Pull summary if given */}
-        </div>
-
-        <div className='DailyWeatherCard'>
-        {/* Display current Location */}
-        {/* Display Current Day +4 */}
-        {/* Pull Temp for current location */}
-        {/* Pull Hi-Lo for Current location */}
-        {/* Decide Summary, or Pull summary if given */}
-        </div>
-
-        <div className='DailyWeatherCard'>
-        {/* Display current Location */}
-        {/* Display Current Day +5 */}
-        {/* Pull Temp for current location */}
-        {/* Pull Hi-Lo for Current location */}
-        {/* Decide Summary, or Pull summary if given */}
-        </div>
-
-        <div className='DailyWeatherCard'>
-        {/* Display current Location */}
-        {/* Display Current Day +6 */}
-        {/* Pull Temp for current location */}
-        {/* Pull Hi-Lo for Current location */}
-        {/* Decide Summary, or Pull summary if given */}
-        </div>
-
-        <div className='DailyWeatherCard'>
-        {/* Display current Location */}
-        {/* Display Current Day +7 */}
-        {/* Pull Temp for current location */}
-        {/* Pull Hi-Lo for Current location */}
-        {/* Decide Summary, or Pull summary if given */}
-        </div>
-
-        <div className='DailyWeatherCard'>
-        {/* Display current Location */}
-        {/* Display Current Day +8 */}
-        {/* Pull Temp for current location */}
-        {/* Pull Hi-Lo for Current location */}
-        {/* Decide Summary, or Pull summary if given */}
-        </div>
-
-        <div className='DailyWeatherCard'>
-        {/* Display current Location*/}
-        {/* Display Current Day +9 */}
-        {/* Pull Temp for current location */}
-        {/* Pull Hi-Lo for Current location */}
-        {/* Decide Summary, or Pull summary if given */}
-        </div>
       </div>
     )
   }

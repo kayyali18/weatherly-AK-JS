@@ -41,7 +41,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <Input />
-        <Current data={this.state.data}/>
+        <Current />
         <TenDay />
       </div>
     );
