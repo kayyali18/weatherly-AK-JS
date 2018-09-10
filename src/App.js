@@ -25,6 +25,11 @@ class App extends Component {
 
   componentDidMount() {
     getWeather.getWeather(this.state.city, this.state.state)
+    .then (data => {
+      this.setState ({
+        data
+      })
+    })
   }
 
   resetLocation = () => {
@@ -36,7 +41,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <Input />
-        <Current />
+        <Current data={this.state.data}/>
         <TenDay />
       </div>
     );
