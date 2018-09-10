@@ -8,14 +8,10 @@ class EachHour extends Component {
   render() {
     return (
       <div className="hourly-weather">
-       
         <h3>{this.props.data.hourly_forecast[this.props.index].FCTTIME.civil}</h3>
-        {/* Pull Temp for current location */}
-        <p className="curr-temp">32</p>
-        {/* Icons */}
-
-        {/* Pull Hi-Lo for Current location */}
-        <p className="hi-lo">Hi - Lo </p>
+        <img src={this.props.data.hourly_forecast[this.props.index].icon_url} />
+        <p>{this.props.data.hourly_forecast[this.props.index].condition}</p>
+        <p>{this.props.data.hourly_forecast[this.props.index].temp.english}° F</p>
       </div>
     );
   }
