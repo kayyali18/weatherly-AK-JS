@@ -3,12 +3,12 @@ import logo from './logo.svg';
 import './App.css';
 
 import Weather from './Weather';
-import CardWrapper from './CardWrapper';
 import Input from './Input';
 import { get } from 'http';
 import Current from './Current';
 import Hourly from './Hourly';
 import Header from './Header';
+import TenDay from './CardWrapper';
 
 const getWeather = require ('./weather-api').getWeather
 
@@ -42,7 +42,8 @@ class App extends Component {
         <Header />
         <Input />
         <Current />
-        <CardWrapper />
+        <TenDay />
+        <Hourly />
       </div>
     );
   }
