@@ -5,7 +5,7 @@
   grid-template-rows: 1fr 1fr;
   background: url('https://files.slack.com/files-pri/T029P2S9M-FCPJ8CPLL/weatherly-background.jpg');
   background-size: cover;
-  height: 700px;
+  height: 100vh;
   font-family: 'Jua', sans-serif;
   text-align: center;
 }

@@ -1,11 +1,11 @@
 import React, { Component} from 'react'
 
-const getWeather = require ('./weather-api.js')
+const getWeather = require ('./weather-api.js').getWeather
 
 export default class Current extends Component{
   constructor() {
     super();
-    this.data = getWeather.getWeather('Denver', 'CO')
+    this.data = getWeather('Denver', 'CO')
     this.state = {
       data: null
     }
@@ -20,9 +20,7 @@ export default class Current extends Component{
   }
 
   render() {
-    if (!this.state.data) {
-      return null;
-    }
+    if (!this.state.data) return null;
     return (
       <div className='current-weather current-component'>
     {/* Display current Location */}
@@ -34,7 +32,6 @@ export default class Current extends Component{
     <p className="curr-temp current-component">Temperature: {this.state.data.current_observation.temperature_string}</p>
     {/* Pull Hi-Lo for Current location */}
     <img className='curr-icon' src={this.state.data.current_observation.icon_url} />
-    <p className="hi-lo current-component">Hi-Lo: 60-75</p>
     {/* Decide Summary, or Pull summary if given */}
     <p className="day-summary current-component">{this.state.data.forecast.txt_forecast.forecastday[0].fcttext}</p>
     </div>

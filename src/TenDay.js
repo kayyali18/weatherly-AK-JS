@@ -1,17 +1,32 @@
 import React, { Component} from 'react'
 
+const getWeather = require ('./weather-api.js').getWeather;
+
 export default class TenDay extends Component{
   constructor() {
     super();
+    this.data = getWeather('Denver', 'CO');
+    this.state = {
+      data: null
+    }
+  }
+
+  componentDidMount () {
+    this.data.then (data => {
+      this.setState ({
+        data: data
+      })
+    })
   }
 
 
   render() {
+    if (!this.state.data) return null;
     return (
       <div className='TenDayWeather'>
         <div className='DailyWeatherCard'>
         {/* Display Current Day */}
-        <h3> Thursday </h3>
+        <h3 className='current-day current-component'>{this.state.data.forecast.txt_forecast.forecastday[0].title}</h3>
         {/* Pull Temp for current location */}
         <p className="curr-temp">32</p>
         {/* Icons */}

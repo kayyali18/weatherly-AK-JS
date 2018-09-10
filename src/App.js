@@ -10,7 +10,7 @@ import Current from './Current';
 import Hourly from './Hourly';
 import Header from './Header';
 
-const getWeather = require ('./weather-api')
+const getWeather = require ('./weather-api').getWeather
 
 
 class App extends Component {
@@ -24,7 +24,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    getWeather.getWeather(this.state.city, this.state.state)
+    getWeather(this.state.city, this.state.state)
     .then (data => {
       this.setState ({
         data
