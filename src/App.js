@@ -48,7 +48,7 @@ class App extends Component {
           <Current state={this.state.state} city={this.state.city} />
         </div>
         <div className='card-holder'>
-          <TenDay state={this.state.state} city={this.state.city} />
+          <TenDay state={this.state.state} city={this.state.city} /> 
           {/*<Hourly state={this.state.state} city={this.state.city} />*/}
         </div>
       </div>

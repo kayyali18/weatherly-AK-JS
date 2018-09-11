@@ -22,7 +22,7 @@ class Input extends Component {
         return ( 
             <form className = 'input-form'>
                 <label> Enter your location:
-                    <input className="city-input"
+                    <input className="input"
                         type="text"
                         value={this.state.location}
                         placeholder="Enter City "
@@ -32,7 +32,7 @@ class Input extends Component {
                                 city: event.target.value
                             })
                         }} />
-                    <input className="state-input"
+                    <input className="input"
                         type="text"
                         value={this.state.location}
                         placeholder="Enter State "

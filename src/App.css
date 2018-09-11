@@ -79,10 +79,12 @@
 }
 
 .hourly-weather {
-  border: 2px solid #FFFFFF;
+  border: 2px solid cornsilk;
   border-radius: 10px;
   width: 100px;
-  color: #FFFFFF;
+  color: cornsilk;
+  background-color: rgba(177, 177, 177, 0.667);
+  margin-top: 10px;
 }
 
 .card-holder {
@@ -91,14 +93,23 @@
   width: 100%;
 }
 
-.DailyWeatherCard {
+.dailyweather-card {
   background-color: rgba(177, 177, 177, 0.667);
   margin-top: 10px;
 }
 
-.TenDayWeather {
+.day-style {
+  width: 100px;
+  height: 200px;
+  grid-row: 2 / 2;
   border: 2px solid cornsilk;
   border-radius: 10px;
+  color: cornsilk;
+}
+
+.TenDayWeather {
+/*  border: 2px solid cornsilk;
+  border-radius: 10px;*/
   width: 100px;
   height: 200px;
   grid-row: 2 / 2;
@@ -127,10 +138,13 @@
   margin: 0px 10px;
   background: transparent;
   color: #002d37;
-  border: 1px solid cornsilk;
+  border: 1px solid #002d37;
   border-radius: 10px;
+  background-color: rgba(177, 177, 177, 0.667);
 }
 
-.city-input {
+.input {
   margin: 0px 10px;
+  font-family: 'Jua', sans-serif;
+  background-color: cornsilk;
 }

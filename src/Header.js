@@ -5,7 +5,7 @@ export default function Header(props) {
   return (
     <div className='header'>
       {
-        <h1>This.Weather</h1>
+        <h1>this.weather( )</h1>
       }
     </div>
   );
