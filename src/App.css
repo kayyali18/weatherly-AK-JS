@@ -277,3 +277,10 @@ button.forecast-toggle:disabled {
 .hidden {
   display: none;
 }
+
+.error-msg {
+  display: grid;
+  grid-column: 1/4;
+  background-color: rgba(177, 177, 177, 0.4);
+  margin: 0;
+}

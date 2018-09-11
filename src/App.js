@@ -35,11 +35,22 @@ class App extends Component {
     })
   }
 
-  resetLocation = (data) => {
-    this.setState ({
-      city: data.city,
-      state: data.state
-    })
+  resetLocation = (inputData) => {
+    getWeather (inputData.city, inputData.state)
+    .then ((data => {
+      if (data.response.error) {
+        this.setState ({
+          data: null
+        })
+        return
+      }
+      this.setState ({
+        city: inputData.city,
+        state: inputData.state,
+        data: data
+        })
+      })
+    )
   }
 
   toggleHourly = () => {
@@ -54,6 +65,15 @@ class App extends Component {
   }
 
   render() {
+    if (!this.state.data) return (
+    <div className="App">
+      <header className='landing'>
+          <Header />
+          <Input resetLocation={this.resetLocation}/>
+      </header>
+      <h1 className="error-msg">ERROR: Please enter a valid address</h1>
+    </div>
+    )
     return (
       <div className="App">
         <header className='landing'>
