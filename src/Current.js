@@ -36,7 +36,7 @@ export default class Current extends Component{
   render() {
     if (!this.state.data) return null
     return (
-      <div className='current-weather current-component'>
+      <article className='current-weather current-component'>
     {/* Display current Location */}
     {/* <h1>{this.props.data.current_observation.location.full}</h1> */}
     <h2 className='current-location current-component'>{this.state.data.current_observation.observation_location.full}</h2>
@@ -45,10 +45,10 @@ export default class Current extends Component{
     {/* Pull Temp for current location */}
     <p className="curr-temp current-component">Temperature: {this.state.data.current_observation.temperature_string}</p>
     {/* Pull Hi-Lo for Current location */}
-    <img className='curr-icon' src={this.state.data.current_observation.icon_url} />
+    <img alt="Display visual weather condition" className='curr-icon' src={this.state.data.current_observation.icon_url} />
     {/* Decide Summary, or Pull summary if given */}
     <p className="day-summary current-component">{this.state.data.forecast.txt_forecast.forecastday[0].fcttext}</p>
-    </div>
+    </article>
     )
   }
 }

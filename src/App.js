@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-import Weather from './Weather';
 import Input from './Input';
-import { get } from 'http';
 import Current from './Current';
 import Hourly from './Hourly';
 import Header from './Header';
@@ -54,8 +51,8 @@ class App extends Component {
   }
 
   toggleHourly = () => {
-    let css = (this.state.showHour == 'hidden') ? 'show' : 'hidden';
-    let css2 = (this.state.showDaily == 'hidden') ? 'show' : 'hidden';
+    let css = (this.state.showHour === 'hidden') ? 'show' : 'hidden';
+    let css2 = (this.state.showDaily === 'hidden') ? 'show' : 'hidden';
     this.setState({
       showHour: css,
       showDaily: css2,
@@ -82,7 +79,7 @@ class App extends Component {
         </header>
         <section className="weather-box">
           <Current state={this.state.state} city={this.state.city} />
-          <div className='card-holder'>
+          <article className='card-holder'>
 
           <button className={`forecast-toggle`}
           disabled={this.state.disabled}
@@ -99,7 +96,7 @@ class App extends Component {
           }}> 10 Day </button>
           <TenDay show={this.state.showDaily} state={this.state.state} city={this.state.city} /> 
           <Hourly show={this.state.showHour} state={this.state.state} city={this.state.city} />
-          </div>
+          </article>
         </section>
       </div>
     );
