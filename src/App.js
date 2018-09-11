@@ -42,11 +42,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
-        <Input resetLocation={this.resetLocation}/>
-        <Current state={this.state.state} city={this.state.city} />
-        <TenDay state={this.state.state} city={this.state.city} />
-        <Hourly state={this.state.state} city={this.state.city} />
+        <div className='main-holder'>
+          <Header />
+          <Input resetLocation={this.resetLocation}/>
+          <Current state={this.state.state} city={this.state.city} />
+        </div>
+        <div className='card-holder'>
+          <TenDay state={this.state.state} city={this.state.city} />
+          {/*<Hourly state={this.state.state} city={this.state.city} />*/}
+        </div>
       </div>
     );
   }

@@ -25,7 +25,7 @@ class Input extends Component {
                     <input className="city-input"
                         type="text"
                         value={this.state.location}
-                        placeholder="Enter location "
+                        placeholder="Enter City "
                         aria-label="Input field for location"
                         onChange={event => {
                             this.setState({
@@ -35,7 +35,7 @@ class Input extends Component {
                     <input className="state-input"
                         type="text"
                         value={this.state.location}
-                        placeholder="Enter location "
+                        placeholder="Enter State "
                         aria-label="Input field for location"
                         onChange={event => {
                             this.setState({

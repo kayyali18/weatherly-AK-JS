@@ -1,13 +1,15 @@
 .App {
-  display: grid;
-  grid-template-columns: 1fr 300px;
   padding: 5px;
-  grid-template-rows: 1fr 1fr;
   background: url('./imgs/1420318956659.jpg');
   background-size: cover;
   height: 100vh;
   font-family: 'Jua', sans-serif;
   text-align: center;
+}
+
+.main-holder {
+  display: grid;
+  grid-template-columns: 1fr 300px;
 }
 
 .header {
@@ -16,7 +18,7 @@
   font-size: 2em;
   height: 13px;
   width: 500px;
-  color: cornsilk;
+  color: #002d37;
 }
 
 .App-title {
@@ -34,9 +36,10 @@
 
 .current-weather {
   border: 1px solid cornsilk;
+  border-radius: 30px;
   background-color: rgba(177, 177, 177, 0.667); 
   /* Copy above line */
-  height: 400px;
+  height: 350px;
   font-size: 1.5em;
   display: flex;
   flex-direction: column;
@@ -82,13 +85,32 @@
   color: #FFFFFF;
 }
 
+.card-holder {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.DailyWeatherCard {
+  background-color: rgba(177, 177, 177, 0.667);
+  margin-top: 10px;
+}
+
 .TenDayWeather {
   border: 2px solid cornsilk;
   border-radius: 10px;
   width: 100px;
-  height: 175px;
+  height: 200px;
   grid-row: 2 / 2;
   color: cornsilk;
+}
+
+.hi-lo {
+  margin-bottom: 0px;
+}
+
+.feels-like {
+  margin-top: 0px;
 }
 
 .input-form {
@@ -97,14 +119,14 @@
   margin-top: 100px;
   grid-column: 1;
   grid-row: 1;
-  color: cornsilk;
+  color: #002d37;
   width: 500px;
 }
 
 .submit-btn {
   margin: 0px 10px;
   background: transparent;
-  color: cornsilk;
+  color: #002d37;
   border: 1px solid cornsilk;
   border-radius: 10px;
 }
