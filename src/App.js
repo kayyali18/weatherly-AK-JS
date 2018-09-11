@@ -44,9 +44,9 @@ class App extends Component {
       <div className="App">
         <Header />
         <Input resetLocation={this.resetLocation}/>
-        <Current />
-        <TenDay />
-        <Hourly />
+        <Current state={this.state.state} city={this.state.city} />
+        <TenDay state={this.state.state} city={this.state.city} />
+        <Hourly state={this.state.state} city={this.state.city} />
       </div>
     );
   }

@@ -3,9 +3,11 @@ import React, { Component} from 'react'
 const getWeather = require ('./weather-api.js').getWeather
 
 export default class Current extends Component{
-  constructor() {
-    super();
-    this.data = getWeather('Denver', 'CO')
+  constructor(props) {
+    super(props);
+    this.city = props.city
+    this.state = props.state
+    this.data = getWeather(this.city, this.state)
     this.state = {
       data: null
     }

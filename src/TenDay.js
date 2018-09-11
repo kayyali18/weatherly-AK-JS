@@ -5,9 +5,11 @@ import Hourly from './Hourly.js';
 const getWeather = require ('./weather-api.js').getWeather;
 
 export default class TenDay extends Component{
-  constructor() {
-    super();
-    this.data = getWeather('Denver', 'CO');
+  constructor(props) {
+    super(props);
+    this.city = props.city
+    this.state = props.state
+    this.data = getWeather(this.city, this.state)
     this.days = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18];
     this.state = {
       data: null,
