@@ -24,7 +24,7 @@ class Input extends Component {
                 <label className="input-label"> Enter your location:
                     <input className="input"
                         type="text"
-                        value={this.state.location}
+                        value={this.state.city}
                         placeholder="Enter City "
                         aria-label="Input field for city"
                         onChange={event => {
@@ -34,7 +34,7 @@ class Input extends Component {
                         }} />
                     <input className="input"
                         type="text"
-                        value={this.state.location}
+                        value={this.state.state}
                         placeholder="Enter State "
                         aria-label="Input field for state"
                         onChange={event => {
