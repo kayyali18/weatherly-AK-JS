@@ -32,15 +32,18 @@ class App extends Component {
     })
   }
 
-  resetLocation = () => {
-
+  resetLocation = (data) => {
+    this.setState ({
+      city: data.city,
+      state: data.state
+    })
   }
 
   render() {
     return (
       <div className="App">
         <Header />
-        <Input />
+        <Input resetLocation={this.resetLocation}/>
         <Current />
         <TenDay />
         <Hourly />
