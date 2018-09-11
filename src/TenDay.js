@@ -40,7 +40,7 @@ export default class TenDay extends Component{
     if (!this.state.data) return null;
     else if (this.state.data) {
       return (
-        <div className={`ten-day-weather ${this.props.show}`}>
+        <section className={`ten-day-weather ${this.props.show}`}>
         <span className="scroll"><p>Scroll</p><i className="fas fa-arrow-circle-right"></i></span>
         {
           this.days.map((day, index) => {
@@ -48,7 +48,7 @@ export default class TenDay extends Component{
           })
         }
   
-        </div>
+        </section>
       )
     }
   }

@@ -82,7 +82,7 @@ class App extends Component {
         </header>
         <section className="weather-box">
           <Current state={this.state.state} city={this.state.city} />
-          <div className='card-holder'>
+          <article className='card-holder'>
 
           <button className={`forecast-toggle`}
           disabled={this.state.disabled}
@@ -99,7 +99,7 @@ class App extends Component {
           }}> 10 Day </button>
           <TenDay show={this.state.showDaily} state={this.state.state} city={this.state.city} /> 
           <Hourly show={this.state.showHour} state={this.state.state} city={this.state.city} />
-          </div>
+          </article>
         </section>
       </div>
     );
