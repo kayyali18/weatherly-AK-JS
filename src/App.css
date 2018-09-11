@@ -1,8 +1,5 @@
 .App {
-  display: grid;
-  grid-template-columns: 1fr 300px;
   padding: 5px;
-  grid-template-rows: 1fr 1fr;
   background: url('./imgs/1420318956659.jpg');
   background-size: cover;
   height: 100vh;
@@ -10,13 +7,21 @@
   text-align: center;
 }
 
+.main-holder {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+}
+
 .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   grid-column: 1;
   grid-row: 1;
   font-size: 2em;
   height: 13px;
   width: 500px;
-  color: cornsilk;
+  color: #002d37;
 }
 
 .App-title {
@@ -34,14 +39,13 @@
 
 .current-weather {
   border: 1px solid cornsilk;
+  border-radius: 30px;
   background-color: rgba(177, 177, 177, 0.667); 
-  /* Copy above line */
-  height: 400px;
+  height: 300px;
   font-size: 1.5em;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; 
-  grid-row: 1 /2; 
+  justify-content: flex-start;
   grid-column: 2;
   width: 100%;
   color: cornsilk;
@@ -53,17 +57,17 @@
 }
 
 .current-component {
-  margin: 5px 0px;
-  /*text-align: left;*/
+  margin: 5px 0px
 }
 
 .curr-icon {
-  width: 75px;
+  width: 65px;
   margin: 0px auto;
 }
 
 .current-day {
-  margin: 0px;
+  margin: 0px 5px;
+  font-size: 15px;
 }
 
 .hi-lo {
@@ -76,39 +80,80 @@
 }
 
 .hourly-weather {
-  border: 2px solid #FFFFFF;
-  border-radius: 10px;
-  width: 100px;
-  color: #FFFFFF;
-}
-
-.TenDayWeather {
   border: 2px solid cornsilk;
   border-radius: 10px;
   width: 100px;
-  height: 175px;
-  grid-row: 2 / 2;
   color: cornsilk;
+  background-color: rgba(177, 177, 177, 0.667);
+  margin-top: 10px;
+}
+
+.hourlyweather-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.hour {
+  margin-bottom: 0px;
+}
+
+.condition {
+  margin-top: 0px;
+}
+
+.dailyweather-card {
+  background-color: rgba(177, 177, 177, 0.667);
+  margin-top: 10px;
+  margin: 0px 10px 0px 10px;
+}
+
+.day-style {
+  width: 100px;
+  height: 175px;
+  border: 2px solid cornsilk;
+  border-radius: 10px;
+  color: cornsilk;
+  margin-top: 35px;
+}
+
+.TenDayWeather {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 150px;
+  color: cornsilk;
+}
+
+.hi-lo {
+  margin-bottom: 0px;
+}
+
+.feels-like {
+  margin-top: 0px;
 }
 
 .input-form {
   padding: 20px;
-  padding-left: 10px;
+  padding-left: 25px;
   margin-top: 100px;
   grid-column: 1;
   grid-row: 1;
-  color: cornsilk;
+  color: #002d37;
   width: 500px;
 }
 
 .submit-btn {
   margin: 0px 10px;
   background: transparent;
-  color: cornsilk;
-  border: 1px solid cornsilk;
+  color: #002d37;
+  border: 1px solid #002d37;
   border-radius: 10px;
+  background-color: rgba(177, 177, 177, 0.667);
 }
 
-.city-input {
+.input {
   margin: 0px 10px;
+  font-family: 'Jua', sans-serif;
+  background-color: cornsilk;
 }

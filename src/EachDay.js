@@ -7,14 +7,14 @@ class EachDay extends Component {
     }
     render() { 
         return ( 
-            <div className='DailyWeatherCard'>
+            <div className='dailyweather-card day-style'>
             {/* Display Current Day */}
             <h3 className='current-day current-component'>{this.props.data.forecast.txt_forecast.forecastday[this.props.counter].title}</h3>
             {/* Pull Temp for current location */}
             <p className="curr-temp current-component">
             Hi - Lo
             </p>
-            <p>
+            <p className='hi-lo'>
             {this.props.data.forecast.simpleforecast.forecastday[this.props.index].high.fahrenheit}
             - {this.props.data.forecast.simpleforecast.forecastday[this.props.index].low.fahrenheit}
             </p>
