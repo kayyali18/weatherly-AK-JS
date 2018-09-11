@@ -10,12 +10,12 @@ const getWeather = (city, state) => {
 
     var data = axios.get (weatherUrl)
     .then ((response) => {
-        if (response.data.response.error == 'querynotfound') {
+        if (response.data.response.error === 'querynotfound') {
             throw new Error ('Unable to find that address');
         }
         return response.data
     }).catch ((error) => {
-        if (error.code == 'ENOTFOUND') console.log ('Unable to connect to API servers')
+        if (error.code === 'ENOTFOUND') console.log ('Unable to connect to API servers')
         else console.log (error.message);
     })
     return data

@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-import Weather from './Weather';
 import Input from './Input';
-import { get } from 'http';
 import Current from './Current';
 import Hourly from './Hourly';
 import Header from './Header';
@@ -54,8 +51,8 @@ class App extends Component {
   }
 
   toggleHourly = () => {
-    let css = (this.state.showHour == 'hidden') ? 'show' : 'hidden';
-    let css2 = (this.state.showDaily == 'hidden') ? 'show' : 'hidden';
+    let css = (this.state.showHour === 'hidden') ? 'show' : 'hidden';
+    let css2 = (this.state.showDaily === 'hidden') ? 'show' : 'hidden';
     this.setState({
       showHour: css,
       showDaily: css2,

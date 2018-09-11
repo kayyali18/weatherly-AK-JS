@@ -20,7 +20,7 @@ class EachDay extends Component {
             </p>
 
             {/* Icons */}
-            <img className='curr-icon' src={this.props.data.forecast.simpleforecast.forecastday[this.props.index].icon_url} />
+            <img alt="Display visual weather condition" className='curr-icon' src={this.props.data.forecast.simpleforecast.forecastday[this.props.index].icon_url} />
     
             {/* Pull Hi-Lo for Current location */}
             <p className="feels-like">{this.props.data.current_observation.weather}</p>

@@ -1,6 +1,5 @@
 import React, { Component} from 'react'
 import EachDay from './EachDay.js';
-import Hourly from './Hourly.js';
 
 const getWeather = require ('./weather-api.js').getWeather;
 
