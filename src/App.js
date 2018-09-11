@@ -49,7 +49,7 @@ class App extends Component {
         </div>
         <div className='card-holder'>
           <TenDay state={this.state.state} city={this.state.city} /> 
-          {/*<Hourly state={this.state.state} city={this.state.city} />*/}
+          {/*<Hourly state={this.state.state} city={this.state.city} /> */}
         </div>
       </div>
     );

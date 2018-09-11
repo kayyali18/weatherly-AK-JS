@@ -41,7 +41,7 @@
   border: 1px solid cornsilk;
   border-radius: 30px;
   background-color: rgba(177, 177, 177, 0.667); 
-  height: 350px;
+  height: 300px;
   font-size: 1.5em;
   display: flex;
   flex-direction: column;
@@ -88,6 +88,20 @@
   margin-top: 10px;
 }
 
+.hourlyweather-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.hour {
+  margin-bottom: 0px;
+}
+
+.condition {
+  margin-top: 0px;
+}
+
 .dailyweather-card {
   background-color: rgba(177, 177, 177, 0.667);
   margin-top: 10px;
@@ -100,12 +114,13 @@
   border: 2px solid cornsilk;
   border-radius: 10px;
   color: cornsilk;
-  margin-top: 10px;
+  margin-top: 35px;
 }
 
 .TenDayWeather {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   height: 150px;
   color: cornsilk;
 }
