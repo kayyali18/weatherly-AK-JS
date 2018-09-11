@@ -39,10 +39,10 @@ export default class Hourly extends Component{
     if (!this.state.data) return null;
     else if (this.state.data) {
       return (
-        <div className='hourlyweather-wrapper'>
+        <div className={`hourly-wrapper ${this.props.show}`}>
         {
           this.hours.map((hour, index) => {
-          return <EachHour data={this.state.data} index={index}/>
+          return <EachHour key={index} data={this.state.data} index={index}/>
           })
         }
   

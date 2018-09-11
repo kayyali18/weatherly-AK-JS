@@ -16,8 +16,8 @@ export default class Current extends Component{
 
   componentDidMount () {
     this.data.then(data => {
-      this.setState ({
-        data: data
+        this.setState ({
+          data: data
       })
     })
   }
@@ -34,7 +34,7 @@ export default class Current extends Component{
   }
 
   render() {
-    if (!this.state.data) return null;
+    if (!this.state.data) return null
     return (
       <div className='current-weather current-component'>
     {/* Display current Location */}
