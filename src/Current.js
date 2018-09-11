@@ -3,9 +3,12 @@ import React, { Component} from 'react'
 const getWeather = require ('./weather-api.js').getWeather
 
 export default class Current extends Component{
-  constructor() {
-    super();
-    this.data = getWeather('Denver', 'CO')
+  constructor(props) {
+    super(props);
+    this.city = props.city
+    this.state = props.state
+    this.data = getWeather(this.city, this.state)
+    this.prevProps = this.props
     this.state = {
       data: null
     }
@@ -17,6 +20,17 @@ export default class Current extends Component{
         data: data
       })
     })
+  }
+
+  componentDidUpdate (prevProps) {
+    if (this.props.city !== prevProps.city || this.props.state !== prevProps.state) {
+      this.data = getWeather (this.props.city, this.props.state)
+      this.data.then (data => {
+        this.setState({
+          data: data
+        })
+      })
+    }
   }
 
   render() {

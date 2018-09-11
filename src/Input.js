@@ -4,9 +4,20 @@ class Input extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            location: ''
+            city: '',
+            state: ''
          }
     }
+
+    updateLocation = () => {
+        let data = {
+            city: this.state.city,
+            state: this.state.state
+        }
+
+        this.props.resetLocation(data)
+    }
+
     render() { 
         return ( 
             <form className = 'input-form'>
@@ -18,7 +29,17 @@ class Input extends Component {
                         aria-label="Input field for location"
                         onChange={event => {
                             this.setState({
-                                location: event.target.value
+                                city: event.target.value
+                            })
+                        }} />
+                    <input className="state-input"
+                        type="text"
+                        value={this.state.location}
+                        placeholder="Enter location "
+                        aria-label="Input field for location"
+                        onChange={event => {
+                            this.setState({
+                                state: event.target.value
                             })
                         }} />
                 </label>
@@ -27,7 +48,7 @@ class Input extends Component {
                     type="submit"
                     onClick={event => {
                         event.preventDefault();
-                        this.props.resetLocation(this.state.location);
+                        this.updateLocation();
                     }}
                 >Search</button>
             </form>
