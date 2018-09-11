@@ -42,15 +42,19 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className='main-holder'>
+        <header className='landing'>
           <Header />
           <Input resetLocation={this.resetLocation}/>
+        </header>
+        <section className="weather-box">
           <Current state={this.state.state} city={this.state.city} />
-        </div>
-        <div className='card-holder'>
+          <div className='card-holder'>
+          <button className="forecast-toggle"> Hourly </button>
+          <button className="forecast-toggle"> 10 Day </button>
           <TenDay state={this.state.state} city={this.state.city} /> 
-          {/*<Hourly state={this.state.state} city={this.state.city} /> */}
-        </div>
+          <Hourly state={this.state.state} city={this.state.city} />
+          </div>
+        </section>
       </div>
     );
   }

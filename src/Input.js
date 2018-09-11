@@ -21,7 +21,7 @@ class Input extends Component {
     render() { 
         return ( 
             <form className = 'input-form'>
-                <label> Enter your location:
+                <label className="input-label"> Enter your location:
                     <input className="input"
                         type="text"
                         value={this.state.location}
@@ -29,7 +29,7 @@ class Input extends Component {
                         aria-label="Input field for location"
                         onChange={event => {
                             this.setState({
-                                city: event.target.value
+                                city: event.target.value,
                             })
                         }} />
                     <input className="input"
@@ -51,6 +51,14 @@ class Input extends Component {
                         this.updateLocation();
                     }}
                 >Search</button>
+                <button 
+                    className="submit-btn"
+                    type="submit"
+                    onClick={event => {
+                        event.preventDefault();
+                        this.updateLocation();
+                    }}
+                >Save</button>
             </form>
          );
     }

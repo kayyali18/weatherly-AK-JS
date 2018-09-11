@@ -1,3 +1,19 @@
+/* --------- BASE ---------- */
+
+* {
+  box-sizing: border-box;
+  color: #002d37;
+  font-family: 'Jua', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #002d37;
+  font-size: 60px;  
+  margin-top: 20px;
+}
+
 .App {
   padding: 5px;
   background: url('./imgs/1420318956659.jpg');
@@ -7,19 +23,45 @@
   text-align: center;
 }
 
-.main-holder {
+/* ---------- LAYOUT ------------- */
+
+.App {
   display: grid;
-  grid-template-columns: 1fr 400px;
+  grid-template-areas: 
+  "landing landing landing"
+  "weather weather weather";
 }
 
+.card-holder {
+  grid-area: daily;
+}
+
+.weather-box {
+  grid-area: weather;
+}
+
+.landing {
+  grid-area: landing;
+  display: grid;
+  grid-template-areas: 
+  "title title"
+  "input input"
+}
+
+.title {
+  grid-area: title;
+}
+
+.input-form {
+  grid-area: input;
+}
+
+
+
+/* ------- MODULES ------------ */
+
+
 .header {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  grid-column: 1;
-  grid-row: 1;
-  font-size: 2em;
-  height: 13px;
   width: 500px;
   color: #002d37;
 }
@@ -36,18 +78,45 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+    /* Input */
+
+.input-label {
+  font-size: 28px;
+}
+
+.input {
+  background-color: rgba(138, 138, 138, 0.4);
+  border: none;
+  color: #002d37;
+  display: block;
+  font-size: 16px;
+  height: 25px;
+  margin: 10px auto;
+  padding-left: 20px;
+  width: 200px;
+}
+
+.input::placeholder {
+  color: #002d37;
+
+}
+
+.submit-btn {
+  border: none;
+  background-color:  #012c35ba;
+  color: cornsilk;  
+  font-size: 16px;
+  height: 25px;
+  margin: 0 5px;
+  width: 95px;
+}
 
 .current-weather {
-  border: 1px solid cornsilk;
   border-radius: 30px;
-  background-color: rgba(177, 177, 177, 0.667); 
-  height: 300px;
+  background-color:  rgba(177, 177, 177, 0.4); 
   font-size: 1.5em;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  grid-column: 2;
-  width: 100%;
+  margin: auto;
+  width: 50%;
   color: cornsilk;
 }
 
@@ -56,8 +125,40 @@
   margin-bottom: 0px;
 }
 
-.current-component {
-  margin: 5px 0px
+/* Hourly & 10 day */
+
+button.forecast-toggle {
+  border: none;
+  background-color:  #012c35ba;
+  color: cornsilk;  
+  font-size: 16px;
+  height: 30px;
+  width: 200px;
+}
+
+button.forecast-toggle:first-of-type {
+  border-right: 3px solid cornsilk;
+}
+
+.TenDayWeather {
+  color: cornsilk; 
+  display: grid;
+  grid-template-columns: repeat(10, minmax(150px, 1fr));
+  height: 200px;
+  margin-top: 30px;
+  overflow: scroll;
+  width: 100vw;
+}
+
+.day-style {
+  box-shadow: -26px 58px 69px -12px rgba(0,0,0,0.66);
+  -moz-box-shadow: -26px 58px 69px -12px rgba(0,0,0,0.66);
+  -webkit-box-shadow: -26px 58px 69px -12px rgba(0,0,0,0.66);
+  border-radius: 10px;
+  color: cornsilk;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .curr-icon {
@@ -84,12 +185,12 @@
   border-radius: 10px;
   width: 100px;
   color: cornsilk;
-  background-color: rgba(177, 177, 177, 0.667);
+  background-color: rgba(177, 177, 177, 0.4);
   margin-top: 10px;
 }
 
 .hourlyweather-wrapper {
-  display: flex;
+  display: none;
   flex-direction: row;
   justify-content: space-between;
 }
@@ -103,27 +204,14 @@
 }
 
 .dailyweather-card {
-  background-color: rgba(177, 177, 177, 0.667);
+  background-color: rgba(177, 177, 177, 0.4);
   margin-top: 10px;
   margin: 0px 10px 0px 10px;
 }
 
-.day-style {
-  width: 100px;
-  height: 175px;
-  border: 2px solid cornsilk;
-  border-radius: 10px;
-  color: cornsilk;
-  margin-top: 35px;
-}
 
-.TenDayWeather {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 150px;
-  color: cornsilk;
-}
+
+
 
 .hi-lo {
   margin-bottom: 0px;
@@ -134,26 +222,26 @@
 }
 
 .input-form {
-  padding: 20px;
+  /* padding: 20px;
   padding-left: 25px;
   margin-top: 100px;
   grid-column: 1;
   grid-row: 1;
   color: #002d37;
-  width: 500px;
+  width: 500px; */
 }
 
-.submit-btn {
-  margin: 0px 10px;
-  background: transparent;
-  color: #002d37;
-  border: 1px solid #002d37;
-  border-radius: 10px;
-  background-color: rgba(177, 177, 177, 0.667);
+
+
+
+/* --------- STATE ----------- */
+
+button:hover {
+  cursor: pointer;
+  background-color:  #012c35;
+  font-weight: 500px;
 }
 
-.input {
-  margin: 0px 10px;
-  font-family: 'Jua', sans-serif;
-  background-color: cornsilk;
+button.forecast-toggle:disabled {
+  background-color: white;
 }
