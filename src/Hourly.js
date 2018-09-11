@@ -8,6 +8,7 @@ export default class Hourly extends Component{
     this.city = props.city
     this.state = props.state
     this.data = getWeather(this.city, this.state)
+    this.prevProps = this.props
     this.hours = [0, 1, 2, 3, 4, 5, 6];
     this.state = {
         data: null
@@ -20,6 +21,17 @@ export default class Hourly extends Component{
         data: data
       })
     })
+  }
+
+  componentDidUpdate (prevProps) {
+    if (this.props.city !== prevProps.city || this.props.state !== prevProps.state) {
+      this.data = getWeather (this.props.city, this.props.state)
+      this.data.then (data => {
+        this.setState({
+          data: data
+        })
+      })
+    }
   }
 
 
