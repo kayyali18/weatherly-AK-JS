@@ -9,10 +9,13 @@
 
 .main-holder {
   display: grid;
-  grid-template-columns: 1fr 300px;
+  grid-template-columns: 1fr 400px;
 }
 
 .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   grid-column: 1;
   grid-row: 1;
   font-size: 2em;
@@ -38,13 +41,11 @@
   border: 1px solid cornsilk;
   border-radius: 30px;
   background-color: rgba(177, 177, 177, 0.667); 
-  /* Copy above line */
   height: 350px;
   font-size: 1.5em;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; 
-  grid-row: 1 /2; 
+  justify-content: flex-start;
   grid-column: 2;
   width: 100%;
   color: cornsilk;
@@ -56,17 +57,17 @@
 }
 
 .current-component {
-  margin: 5px 0px;
-  /*text-align: left;*/
+  margin: 5px 0px
 }
 
 .curr-icon {
-  width: 75px;
+  width: 65px;
   margin: 0px auto;
 }
 
 .current-day {
-  margin: 0px;
+  margin: 0px 5px;
+  font-size: 15px;
 }
 
 .hi-lo {
@@ -87,32 +88,25 @@
   margin-top: 10px;
 }
 
-.card-holder {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
 .dailyweather-card {
   background-color: rgba(177, 177, 177, 0.667);
   margin-top: 10px;
+  margin: 0px 10px 0px 10px;
 }
 
 .day-style {
   width: 100px;
-  height: 200px;
-  grid-row: 2 / 2;
+  height: 175px;
   border: 2px solid cornsilk;
   border-radius: 10px;
   color: cornsilk;
+  margin-top: 10px;
 }
 
 .TenDayWeather {
-/*  border: 2px solid cornsilk;
-  border-radius: 10px;*/
-  width: 100px;
-  height: 200px;
-  grid-row: 2 / 2;
+  display: flex;
+  flex-direction: row;
+  height: 150px;
   color: cornsilk;
 }
 
@@ -126,7 +120,7 @@
 
 .input-form {
   padding: 20px;
-  padding-left: 10px;
+  padding-left: 25px;
   margin-top: 100px;
   grid-column: 1;
   grid-row: 1;
