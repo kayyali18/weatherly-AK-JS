@@ -8,7 +8,7 @@ import { get } from 'http';
 import Current from './Current';
 import Hourly from './Hourly';
 import Header from './Header';
-import TenDay from './CardWrapper';
+import TenDay from './TenDay';
 
 const getWeather = require ('./weather-api').getWeather
 
@@ -19,7 +19,10 @@ class App extends Component {
     this.state = {
       city: 'Denver',
       state: 'CO',
-      data: {}
+      data: {},
+      showHour: 'show',
+      showDaily: 'hidden',
+      disabled: true
     }
   }
 
@@ -39,6 +42,17 @@ class App extends Component {
     })
   }
 
+  toggleHourly = () => {
+    let css = (this.state.showHour == 'hidden') ? 'show' : 'hidden';
+    let css2 = (this.state.showDaily == 'hidden') ? 'show' : 'hidden';
+    this.setState({
+      showHour: css,
+      showDaily: css2,
+      disabled:!this.state.disabled
+
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -49,10 +63,22 @@ class App extends Component {
         <section className="weather-box">
           <Current state={this.state.state} city={this.state.city} />
           <div className='card-holder'>
-          <button className="forecast-toggle"> Hourly </button>
-          <button className="forecast-toggle"> 10 Day </button>
-          <TenDay state={this.state.state} city={this.state.city} /> 
-          <Hourly state={this.state.state} city={this.state.city} />
+
+          <button className={`forecast-toggle`}
+          disabled={this.state.disabled}
+          onClick={event => {
+            event.preventDefault();
+            this.toggleHourly();
+          }}> Hourly </button>
+          
+          <button className="forecast-toggle"
+          disabled={!this.state.disabled}
+          onClick={event => {
+            event.preventDefault();
+            this.toggleHourly();
+          }}> 10 Day </button>
+          <TenDay show={this.state.showDaily} state={this.state.state} city={this.state.city} /> 
+          <Hourly show={this.state.showHour} state={this.state.state} city={this.state.city} />
           </div>
         </section>
       </div>

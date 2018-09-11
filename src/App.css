@@ -116,7 +116,7 @@ h1 {
   background-color:  rgba(177, 177, 177, 0.4); 
   font-size: 1.5em;
   margin: auto;
-  width: 50%;
+  width: 65%;
   color: cornsilk;
 }
 
@@ -137,28 +137,70 @@ button.forecast-toggle {
 }
 
 button.forecast-toggle:first-of-type {
-  border-right: 3px solid cornsilk;
+  border-right: 3px solid rgba(177, 177, 177, 0.8);
 }
 
-.TenDayWeather {
-  color: cornsilk; 
-  display: grid;
+.ten-day-weather {
   grid-template-columns: repeat(10, minmax(150px, 1fr));
+  grid-template-rows: 20px 1fr;
   height: 200px;
   margin-top: 30px;
   overflow: scroll;
   width: 100vw;
 }
 
+.scroll {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: fixed;
+  right: 10px;
+  width: 80px;
+}
+
+.scroll p,
+.scroll i {
+  color: cornsilk;
+  font-size: 16px;
+}
+
 .day-style {
+  background-color: rgba(177, 177, 177, 0.4);
+  border-radius: 10px;
   box-shadow: -26px 58px 69px -12px rgba(0,0,0,0.66);
   -moz-box-shadow: -26px 58px 69px -12px rgba(0,0,0,0.66);
   -webkit-box-shadow: -26px 58px 69px -12px rgba(0,0,0,0.66);
-  border-radius: 10px;
   color: cornsilk;
   display: flex;
   flex-direction: column;
+  grid-row: 2;
   justify-content: space-around;
+  margin: 0px 10px;
+  margin-top: 10px;
+}
+
+.hourly-wrapper {
+  grid-template-columns: repeat(7, minmax(150px, 1fr));
+  grid-template-rows: 20px 1fr;
+  height: 200px;
+  margin-top: 30px;
+  overflow: scroll;
+  width: 100vw;
+}
+
+.hourly-weather {
+  background-color: rgba(177, 177, 177, 0.4);
+  border-radius: 10px;
+  box-shadow: -26px 58px 69px -12px rgba(0,0,0,0.66);
+  -moz-box-shadow: -26px 58px 69px -12px rgba(0,0,0,0.66);
+  -webkit-box-shadow: -26px 58px 69px -12px rgba(0,0,0,0.66);
+  color: cornsilk;
+  display: flex;
+  flex-direction: column;
+  grid-row: 2;
+  justify-content: space-around;
+  margin: 0px 10px;
+  margin-top: 10px;
 }
 
 .curr-icon {
@@ -180,20 +222,6 @@ button.forecast-toggle:first-of-type {
   margin:  0px 5px 30px 5px;
 }
 
-.hourly-weather {
-  border: 2px solid cornsilk;
-  border-radius: 10px;
-  width: 100px;
-  color: cornsilk;
-  background-color: rgba(177, 177, 177, 0.4);
-  margin-top: 10px;
-}
-
-.hourlyweather-wrapper {
-  display: none;
-  flex-direction: row;
-  justify-content: space-between;
-}
 
 .hour {
   margin-bottom: 0px;
@@ -202,16 +230,6 @@ button.forecast-toggle:first-of-type {
 .condition {
   margin-top: 0px;
 }
-
-.dailyweather-card {
-  background-color: rgba(177, 177, 177, 0.4);
-  margin-top: 10px;
-  margin: 0px 10px 0px 10px;
-}
-
-
-
-
 
 .hi-lo {
   margin-bottom: 0px;
@@ -242,6 +260,20 @@ button:hover {
   font-weight: 500px;
 }
 
+button:disabled {
+  background-color: cornsilk;
+  color: #012c35;
+  cursor: default;
+}
+
 button.forecast-toggle:disabled {
   background-color: white;
+}
+
+.show {
+  display: grid;
+}
+
+.hidden {
+  display: none;
 }
