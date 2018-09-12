@@ -5,24 +5,8 @@ import { getWeather } from './weather-api';
 export default class Hourly extends Component{
   constructor(props) {
     super(props);
-    this.prevProps = this.props
     this.hours = [0, 1, 2, 3, 4, 5, 6];
-    this.state = {
-        data: null
-    };
   }
-
-  componentDidUpdate (prevProps) {
-    if (this.props.city !== prevProps.city || this.props.state !== prevProps.state) {
-      this.data = getWeather (this.props.city, this.props.state)
-      this.data.then (data => {
-        this.setState({
-          data: data
-        })
-      })
-    }
-  }
-
 
   render() {
     if (!this.props.data.hourly_forecast) return null;
