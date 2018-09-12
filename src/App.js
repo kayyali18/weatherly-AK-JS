@@ -33,15 +33,12 @@ class App extends Component {
   }
 
   resetLocation = (inputData) => {
-    if (!inputData.city) return this.setState({data: null})
+    if (!inputData.city || !inputData.state) return this.setState({data: null})
+
     getWeather (inputData.city, inputData.state)
     .then ((data => {
-      if (data.response.error) {
-        this.setState ({
-          data: null
-        })
-        return
-      }
+      if (data.response.error) return this.setState({data: null}) 
+
       this.setState ({
         city: inputData.city,
         state: inputData.state,
@@ -52,8 +49,8 @@ class App extends Component {
   }
 
   toggleHourly = () => {
-    let css = (this.state.showHour === 'hidden') ? 'show' : 'hidden';
-    let css2 = (this.state.showDaily === 'hidden') ? 'show' : 'hidden';
+    let css = (this.state.showHour == 'hidden') ? 'show' : 'hidden';
+    let css2 = (this.state.showDaily == 'hidden') ? 'show' : 'hidden';
     this.setState({
       showHour: css,
       showDaily: css2,
@@ -69,7 +66,7 @@ class App extends Component {
           <Header />
           <Input resetLocation={this.resetLocation}/>
       </header>
-      <h1 className="error-msg">ERROR: Please enter a valid address</h1>
+      <h1 className="error-msg">ERROR: Please enter a valid location</h1>
     </div>
     )
     return (
@@ -79,7 +76,7 @@ class App extends Component {
           <Input resetLocation={this.resetLocation}/>
         </header>
         <section className="weather-box">
-          <Current state={this.state.state} city={this.state.city} />
+          <Current data={this.state.data} />
           <article className='card-holder'>
 
           <button className={`forecast-toggle`}
@@ -95,8 +92,8 @@ class App extends Component {
             event.preventDefault();
             this.toggleHourly();
           }}> 10 Day </button>
-          <TenDay show={this.state.showDaily} state={this.state.state} city={this.state.city} /> 
-          <Hourly show={this.state.showHour} state={this.state.state} city={this.state.city} />
+          <TenDay data={this.state.data} show={this.state.showDaily} /> 
+          <Hourly data={this.state.data} show={this.state.showHour} />
           </article>
         </section>
       </div>

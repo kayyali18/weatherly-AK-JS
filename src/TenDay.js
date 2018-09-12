@@ -6,22 +6,11 @@ const getWeather = require ('./weather-api.js').getWeather;
 export default class TenDay extends Component{
   constructor(props) {
     super(props);
-    this.city = props.city
-    this.state = props.state
-    this.data = getWeather(this.city, this.state)
     this.prevProps = this.props
     this.days = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18];
     this.state = {
       data: null,
     }
-  }
-
-  componentDidMount () {
-    this.data.then (data => {
-      this.setState ({
-        data: data
-      })
-    })
   }
 
   componentDidUpdate (prevProps) {
@@ -36,20 +25,17 @@ export default class TenDay extends Component{
   }
 
   render() {
-    if (!this.state.data) return null;
-    else if (this.state.data) {
-      return (
-        <section className={`ten-day-weather ${this.props.show}`}>
-        <span className="scroll"><p>Scroll</p><i className="fas fa-arrow-circle-right"></i></span>
-        {
-          this.days.map((day, index) => {
-          return <EachDay key={index} data={this.state.data} counter={day} index={index}/>
-          })
-        }
-  
-        </section>
-      )
-    }
+    if (!this.props.data.forecast) return null;
+    return (
+      <section className={`ten-day-weather ${this.props.show}`}>
+      <span className="scroll"><p>Scroll</p><i className="fas fa-arrow-circle-right"></i></span>
+      {
+        this.days.map((day, index) => {
+        return <EachDay key={index} data={this.props.data} counter={day} index={index}/>
+        })
+      }
+      </section>
+    )
   }
 }
 
