@@ -33,6 +33,7 @@ class App extends Component {
   }
 
   resetLocation = (inputData) => {
+    if (!inputData.city) return this.setState({data: null})
     getWeather (inputData.city, inputData.state)
     .then ((data => {
       if (data.response.error) {
