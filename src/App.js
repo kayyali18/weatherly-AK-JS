@@ -76,7 +76,7 @@ class App extends Component {
           <Input resetLocation={this.resetLocation}/>
         </header>
         <section className="weather-box">
-          <Current state={this.state.state} city={this.state.city} />
+          <Current data={this.state.data} />
           <article className='card-holder'>
 
           <button className={`forecast-toggle`}
@@ -92,8 +92,8 @@ class App extends Component {
             event.preventDefault();
             this.toggleHourly();
           }}> 10 Day </button>
-          <TenDay show={this.state.showDaily} state={this.state.state} city={this.state.city} /> 
-          <Hourly show={this.state.showHour} state={this.state.state} city={this.state.city} />
+          <TenDay data={this.state.data} show={this.state.showDaily} /> 
+          <Hourly data={this.state.data} show={this.state.showHour} />
           </article>
         </section>
       </div>
