@@ -46,7 +46,6 @@ export default class TenDay extends Component{
           return <EachDay key={index} data={this.state.data} counter={day} index={index}/>
           })
         }
-  
         </section>
       )
     }

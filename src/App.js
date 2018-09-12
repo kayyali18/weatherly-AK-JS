@@ -34,9 +34,11 @@ class App extends Component {
 
   resetLocation = (inputData) => {
     if (!inputData.city || !inputData.state) return this.setState({data: null})
+
     getWeather (inputData.city, inputData.state)
     .then ((data => {
       if (data.response.error) return this.setState({data: null}) 
+
       this.setState ({
         city: inputData.city,
         state: inputData.state,
@@ -47,8 +49,8 @@ class App extends Component {
   }
 
   toggleHourly = () => {
-    let css = (this.state.showHour === 'hidden') ? 'show' : 'hidden';
-    let css2 = (this.state.showDaily === 'hidden') ? 'show' : 'hidden';
+    let css = (this.state.showHour == 'hidden') ? 'show' : 'hidden';
+    let css2 = (this.state.showDaily == 'hidden') ? 'show' : 'hidden';
     this.setState({
       showHour: css,
       showDaily: css2,
