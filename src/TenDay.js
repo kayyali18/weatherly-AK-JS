@@ -25,12 +25,6 @@ export default class TenDay extends Component{
 }
 
 
-// from props map every other period to new array
-// results.simpleforecast.forecastday[i++] 
-
-
-
-
 
 
 

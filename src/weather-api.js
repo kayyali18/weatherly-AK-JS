@@ -18,10 +18,6 @@ const getWeather = (city, state) => {
         else console.log (error.message);
     })
     return data
-/* Query is dynamic based off compnent calling it
-http://api.wunderground.com/api/${key}/forecast10day/conditions/hourly/q/CO/Denver.json
-
-*/
 }   
 
 module.exports.getWeather = getWeather;

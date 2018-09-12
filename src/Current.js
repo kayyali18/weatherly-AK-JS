@@ -8,7 +8,6 @@ export default class Current extends Component{
   }
 
   render() {
-    console.log(this.props.data);
     if (!this.props.data.current_observation) return null
     return (
     <article className='current-weather current-component'>

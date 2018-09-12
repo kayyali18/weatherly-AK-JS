@@ -1,17 +1,18 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import TenDay from './TenDay';
 import { wrap } from 'module';
+import EachHour from './EachHour';
 
 
 const getWeather = require('./weather-api').getWeather
+var data;
 
 describe('App', () => {
   let wrapper
   let wrapperMounted 
-  beforeEach(() => {
-    wrapper = shallow( <TenDay /> )
-    // wrapperMounted = mount (<App />)
+  beforeEach(async () => {
+    data = await getWeather('Denver', 'CO')
+    wrapper = shallow( <EachHour data={data} index={0}/> )
   })
 
   it('should exist', () => {
@@ -19,13 +20,12 @@ describe('App', () => {
     expect(wrapper).toBeDefined();
   })
 
-  it('should render the TenDay and EachDay components', () => {
-    expect(wrapper.find('EachDay').length).toBe(10) 
+  it('should render the Current and Hourly components', async () => {
+    expect(wrapper.find('article').children().length).toBe(4);
+
   })
 
   it  ('should accept prop of data', async () => {
-    let data = await getWeather('Denver', 'CO')
-    wrapper = shallow( <TenDay data={data}/> )
     expect (wrapper.instance().props.data).toEqual(data)
   })
 

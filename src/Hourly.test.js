@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import TenDay from './TenDay';
 import { wrap } from 'module';
+import Hourly from './Hourly';
 
 
 const getWeather = require('./weather-api').getWeather
@@ -10,7 +10,7 @@ describe('App', () => {
   let wrapper
   let wrapperMounted 
   beforeEach(() => {
-    wrapper = shallow( <TenDay /> )
+    wrapper = shallow( <Hourly /> )
     // wrapperMounted = mount (<App />)
   })
 
@@ -19,13 +19,13 @@ describe('App', () => {
     expect(wrapper).toBeDefined();
   })
 
-  it('should render the TenDay and EachDay components', () => {
-    expect(wrapper.find('EachDay').length).toBe(10) 
+  it('should render the Current and Hourly components', () => {
+    expect(wrapper.find('EachHour').length).toBe(7) 
   })
 
   it  ('should accept prop of data', async () => {
     let data = await getWeather('Denver', 'CO')
-    wrapper = shallow( <TenDay data={data}/> )
+    wrapper = shallow( <Hourly data={data}/> )
     expect (wrapper.instance().props.data).toEqual(data)
   })
 
