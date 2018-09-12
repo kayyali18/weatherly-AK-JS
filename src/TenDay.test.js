@@ -1,7 +1,5 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-// import App from './App';
-// import Current from './Current';
 import TenDay from './TenDay';
 import EachDay from './EachDay';
 
@@ -9,7 +7,7 @@ describe('App', () => {
   let wrapper
   let wrapperMounted 
   beforeEach(() => {
-    wrapper = shallow( <TenDay /> )
+    wrapper = shallow( <TenDay state='CO' city='Denver'/> )
     // wrapperMounted = mount (<App />)
   })
 
@@ -20,7 +18,7 @@ describe('App', () => {
 
   it('should render the Current and Hourly components', () => {
     expect(wrapper.find(EachDay)).to.have.lengthOf(1) 
-    console.log (wrapper.find(EachDay)) 
+    console.log (wrapper.instance.props()) 
   }) 
 
 })

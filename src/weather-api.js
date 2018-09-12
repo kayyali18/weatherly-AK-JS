@@ -1,8 +1,7 @@
 const axios = require ('axios');
 
 
-const keyObj = require ('./api-key')
-const key = keyObj.key
+const key = require ('./api-key').key
 
 const getWeather = (city, state) => {
     let encodedAddress = encodeURIComponent(city);
