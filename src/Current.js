@@ -11,9 +11,6 @@ export default class Current extends Component{
     }
   }
 
-  componentDidMount () {
-  }
-
   componentDidUpdate (prevProps) {
     if (this.props.city !== prevProps.city || this.props.state !== prevProps.state) {
       this.data = getWeather (this.props.city, this.props.state)
