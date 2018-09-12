@@ -33,15 +33,10 @@ class App extends Component {
   }
 
   resetLocation = (inputData) => {
-    if (!inputData.city) return this.setState({data: null})
+    if (!inputData.city || !inputData.state) return this.setState({data: null})
     getWeather (inputData.city, inputData.state)
     .then ((data => {
-      if (data.response.error) {
-        this.setState ({
-          data: null
-        })
-        return
-      }
+      if (data.response.error) return this.setState({data: null}) 
       this.setState ({
         city: inputData.city,
         state: inputData.state,
@@ -69,7 +64,7 @@ class App extends Component {
           <Header />
           <Input resetLocation={this.resetLocation}/>
       </header>
-      <h1 className="error-msg">ERROR: Please enter a valid address</h1>
+      <h1 className="error-msg">ERROR: Please enter a valid location</h1>
     </div>
     )
     return (
