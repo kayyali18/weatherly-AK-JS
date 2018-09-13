@@ -14,8 +14,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      city: 'Denver',
-      state: 'CO',
+      city: JSON.parse(localStorage.getItem('city')) || 'Denver',
+      state: JSON.parse(localStorage.getItem('state')) || 'CO',
       data: {},
       showHour: 'show',
       showDaily: 'hidden',
@@ -42,10 +42,18 @@ class App extends Component {
       this.setState ({
         city: inputData.city,
         state: inputData.state,
-        data: data
+        data: data,
+        saved: this.save(inputData)
         })
       })
     )
+  }
+
+  save = (data) => {
+    if (data.saved) {
+      localStorage.setItem('city', JSON.stringify(data.city))
+      localStorage.setItem('state', JSON.stringify(data.state))
+    }
   }
 
   toggleHourly = () => {
