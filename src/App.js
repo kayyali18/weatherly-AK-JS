@@ -57,8 +57,8 @@ class App extends Component {
   }
 
   toggleHourly = () => {
-    let css = (this.state.showHour == 'hidden') ? 'show' : 'hidden';
-    let css2 = (this.state.showDaily == 'hidden') ? 'show' : 'hidden';
+    let css = (this.state.showHour === 'hidden') ? 'show' : 'hidden';
+    let css2 = (this.state.showDaily === 'hidden') ? 'show' : 'hidden';
     this.setState({
       showHour: css,
       showDaily: css2,

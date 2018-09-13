@@ -1,7 +1,5 @@
 import React, { Component} from 'react'
 
-const getWeather = require ('./weather-api.js').getWeather
-
 export default class Current extends Component{
   constructor(props) {
     super(props);
