@@ -1,6 +1,5 @@
 import React, { Component} from 'react'
 import EachHour from './EachHour';
-import { getWeather } from './weather-api';
 
 export default class Hourly extends Component{
   constructor(props) {

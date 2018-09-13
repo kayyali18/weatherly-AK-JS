@@ -1,8 +1,6 @@
 import React, { Component} from 'react'
 import EachDay from './EachDay.js';
 
-const getWeather = require ('./weather-api.js').getWeather;
-
 export default class TenDay extends Component{
   constructor(props) {
     super(props);
