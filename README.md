@@ -7,4 +7,4 @@
 ![WireFrame](src/wireframe.jpg)
 
 
-![this.weather](src/weatherlySS.png)
+![this.weather](src/this.weatherSS.png)
