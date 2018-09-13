@@ -9,10 +9,11 @@ class Input extends Component {
          }
     }
 
-    updateLocation = () => {
+    updateLocation = (boolean) => {
         let data = {
             city: this.state.city,
-            state: this.state.state
+            state: this.state.state,
+            saved: boolean
         }
 
         this.props.resetLocation(data)
@@ -48,7 +49,7 @@ class Input extends Component {
                     type="submit"
                     onClick={event => {
                         event.preventDefault();
-                        this.updateLocation();
+                        this.updateLocation(false);
                     }}
                 >Search</button>
                 <button 
@@ -56,7 +57,7 @@ class Input extends Component {
                     type="submit"
                     onClick={event => {
                         event.preventDefault();
-                        this.updateLocation();
+                        this.updateLocation(true);
                     }}
                 >Save</button>
             </form>
@@ -65,6 +66,3 @@ class Input extends Component {
 }
  
 export default Input;
-
-// location = location.split(',');
-// location[0] = location[0].replace(' ', '_');
