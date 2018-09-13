@@ -6,22 +6,7 @@ const getWeather = require ('./weather-api.js').getWeather;
 export default class TenDay extends Component{
   constructor(props) {
     super(props);
-    this.prevProps = this.props
     this.days = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18];
-    this.state = {
-      data: null,
-    }
-  }
-
-  componentDidUpdate (prevProps) {
-    if (this.props.city !== prevProps.city || this.props.state !== prevProps.state) {
-      this.data = getWeather (this.props.city, this.props.state)
-      this.data.then (data => {
-        this.setState({
-          data: data
-        })
-      })
-    }
   }
 
   render() {
@@ -38,12 +23,6 @@ export default class TenDay extends Component{
     )
   }
 }
-
-
-// from props map every other period to new array
-// results.simpleforecast.forecastday[i++] 
-
-
 
 
 
